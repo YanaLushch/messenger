@@ -7,16 +7,14 @@ import MessageGroup from "../../components/MessageGroup/MessageGroup";
 
 const MyChat = () => {
   const { myProfile } = useMyProfile();
-  const { groupedMessages } = useMessages();
-
-  console.log(groupedMessages);
+  const { messages } = useMessages();
 
   return (
     <div className="w-11/12 m-auto">
       <ChatHeader myProfile={myProfile} />
       <div>
-        {groupedMessages &&
-          groupedMessages.map((chat, index) => {
+        {messages &&
+          messages.map((chat, index) => {
             return (
               <MessageGroup
                 key={chat.id}
