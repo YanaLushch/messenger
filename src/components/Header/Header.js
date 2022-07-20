@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-regular-svg-icons";
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
 import profile from "./../../assets/images/unknown_profile.jpg";
-// import { Wrapper } from "./MyMessages.styles";
 
 const Header = () => {
   return (

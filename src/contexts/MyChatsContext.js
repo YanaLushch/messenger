@@ -1,8 +1,10 @@
-import { useState, useEffect } from "react";
-import api from './../constants/api';
+import { useState, useEffect, createContext } from "react";
+import api from '../constants/api';
 import axios from "axios";
 
-const useFriends = () => {
+export const MyChatsContext = createContext();
+
+const MyChatsProvider = ({children}) => {
   const [friends, setFriends] = useState([]);
 
   useEffect(() => {
@@ -19,7 +21,11 @@ const useFriends = () => {
     return new Date(b.lastMessageTime) - new Date(a.lastMessageTime);
   });
 
-  return { friends, setFriends, filteredByOnline, sortedByLastMessageTime };
+  return (
+    <MyChatsContext.Provider value={{ friends, filteredByOnline, sortedByLastMessageTime }}>
+        {children}
+    </MyChatsContext.Provider>
+  );
 };
 
-export default useFriends;
+export default MyChatsProvider;

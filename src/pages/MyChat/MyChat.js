@@ -1,20 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import ChatFooter from "../../components/ChatFooter/ChatFooter";
 import ChatHeader from "./../../components/ChatHeader";
 import useMyProfile from "./../../hooks/useMyProfile";
-import useMessages from "./../../hooks/useMessages";
+import { ChatContext } from "./../../contexts/MyChatContext";
 import MessageGroup from "../../components/MessageGroup/MessageGroup";
 
-const MyChat = () => {
+const Chat = () => {
   const { myProfile } = useMyProfile();
-  const { messages } = useMessages();
+  const { messages } = useContext(ChatContext);
 
   return (
     <div className="w-11/12 m-auto">
       <ChatHeader myProfile={myProfile} />
       <div>
         {messages &&
-          messages.map((chat, index) => {
+          messages.map((chat) => {
             return (
               <MessageGroup
                 key={chat.id}
@@ -29,4 +29,4 @@ const MyChat = () => {
   );
 };
 
-export default MyChat;
+export default Chat;

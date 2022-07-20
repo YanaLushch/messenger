@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 const OnlineStroke = ({ profiles }) => {
-  console.log(profiles);
   return (
     <div className="flex items-center mt-2 overflow-x-auto">
       <FontAwesomeIcon icon={faPlus} className="fa-2xl mr-4" />

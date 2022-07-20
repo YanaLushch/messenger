@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import Header from "../../components/Header";
 import SearchInput from "../../components/SearchInput";
 import OnlineStroke from "../../components/OnlineStroke";
-import useFriends from "../../hooks/useFriends";
+import { MyChatsContext } from "../../contexts/MyChatsContext";
 import LastMessageStroke from "../../components/LastMessageStroke";
 import Footer from "../../components/Footer";
 
-const MyMessages = () => {
-  const { filteredByOnline, sortedByLastMessageTime } = useFriends();
+const Chats = () => {
+  const { filteredByOnline, sortedByLastMessageTime} = useContext(MyChatsContext);
 
   return (
     <div className="w-11/12 m-auto">
@@ -26,4 +26,4 @@ const MyMessages = () => {
   );
 };
 
-export default MyMessages;
+export default Chats;
