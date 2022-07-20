@@ -6,7 +6,7 @@ import { MyChatsContext } from "../../contexts/MyChatsContext";
 import LastMessageStroke from "../../components/LastMessageStroke";
 import Footer from "../../components/Footer";
 
-const Chats = () => {
+const MyChats = () => {
   const { filteredByOnline, sortedByLastMessageTime} = useContext(MyChatsContext);
 
   return (
@@ -26,4 +26,4 @@ const Chats = () => {
   );
 };
 
-export default Chats;
+export default MyChats;

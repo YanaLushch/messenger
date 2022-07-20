@@ -5,7 +5,7 @@ import useMyProfile from "./../../hooks/useMyProfile";
 import { ChatContext } from "./../../contexts/MyChatContext";
 import MessageGroup from "../../components/MessageGroup/MessageGroup";
 
-const Chat = () => {
+const MyChat = () => {
   const { myProfile } = useMyProfile();
   const { messages } = useContext(ChatContext);
 
@@ -29,4 +29,4 @@ const Chat = () => {
   );
 };
 
-export default Chat;
+export default MyChat;
