@@ -10,7 +10,7 @@ const MyChatsProvider = ({children}) => {
   useEffect(() => {
     axios({
       method: 'get',
-      url: `${api.baseURL}/`
+      url: `${api.baseURL}/friends`
     })
     .then(response => {setFriends(response.data);})
     .catch(error => console.log(error))

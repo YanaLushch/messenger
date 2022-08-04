@@ -8,6 +8,7 @@ import MessageGroup from "../../components/MessageGroup/MessageGroup";
 const MyChat = () => {
   const { myProfile } = useMyProfile();
   const { messages } = useContext(ChatContext);
+  console.log(messages);
 
   return (
     <div className="w-11/12 m-auto">
@@ -19,7 +20,7 @@ const MyChat = () => {
               <MessageGroup
                 key={chat.id}
                 chat={chat}
-                myMessage={chat.userId === "user123"}
+                myMessage={chat.userId === "user121"}
               />
             );
           })}

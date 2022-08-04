@@ -10,10 +10,10 @@ const MyChatProvider = ({ children }) => {
   useEffect(() => {
     axios({
       method: "get",
-      url: `${api.baseURL}/chat`,
+      url: `${api.baseURL}/messages`,
     })
       .then((response) => {
-        setMessages(response.data);
+        setMessages(response.data.data.messages);
       })
       .catch((error) => console.log(error));
   }, []);
