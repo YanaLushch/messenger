@@ -7,7 +7,7 @@ import MessageGroup from "../../components/MessageGroup/MessageGroup";
 
 const MyChat = () => {
   const { myProfile } = useMyProfile();
-  const { messages } = useContext(ChatContext);
+  const { messages, sendMessage } = useContext(ChatContext);
   console.log(messages);
 
   return (
@@ -25,7 +25,7 @@ const MyChat = () => {
             );
           })}
       </div>
-      <ChatFooter />
+      <ChatFooter sendMessage={sendMessage} />
     </div>
   );
 };

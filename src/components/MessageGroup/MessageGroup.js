@@ -20,7 +20,9 @@ const MessageGroup = ({ chat, myMessage }) => {
           );
         })}
       {chat && chat.text && (
+        <div>
         <Message key={chat._id} message={chat} myMessage={myMessage} />
+        </div>
       )}
     </div>
   );
